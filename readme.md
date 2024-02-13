@@ -23,6 +23,7 @@ Label: 1 (Instances: 125)
 
 
 [+] Evaluating model
+```
 0.8041666666666667
               precision    recall  f1-score   support
 
@@ -32,3 +33,4 @@ Label: 1 (Instances: 125)
     accuracy                           0.80       240
    macro avg       0.81      0.81      0.80       240
 weighted avg       0.81      0.80      0.80       240
+```
