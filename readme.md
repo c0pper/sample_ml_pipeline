@@ -1,3 +1,9 @@
+# Ordine
+1. load_dataset.py
+1. preprocess_dataset.py
+1. train_model_multinomialNB.py / train_model_svm.py
+1. evaluate_model.py
+
 # Sample output
 
 [+] Loading dataset
