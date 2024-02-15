@@ -9,6 +9,7 @@ from sklearn.metrics import ConfusionMatrixDisplay
 import numpy as np
 import re
 import string
+from sklearn.svm import SVC
 
 def load_dataset(dataset_path, x_label, y_label):
     print("\n\n[+] Loading dataset\n\n")
@@ -72,6 +73,12 @@ def train_model(xtrain_tfidf, ytrain):
     clf.fit(xtrain_tfidf, ytrain)
     return clf
 
+def train_model_svm(xtrain_tfidf, ytrain):
+    print("\n\n[+] Training model")
+    clf = SVC()
+    clf.fit(xtrain_tfidf, ytrain)
+    return clf
+
 def evaluate_model(model, xvalid_tfidf, yvalid, target_names):
     print("\n\n[+] Evaluating model")
     predicted = model.predict(xvalid_tfidf)
@@ -92,5 +99,5 @@ if __name__ == "__main__":
     dataset_path = "df_gender2_4k.csv"
     dataset = load_dataset(dataset_path, x_label="texts", y_label="gender")
     xtrain_tfidf, xvalid_tfidf, ytrain, yvalid, target_names = preprocess_dataset(dataset, x_label="texts", y_label="gender")
-    model = train_model(xtrain_tfidf, ytrain)
+    model = train_model_svm(xtrain_tfidf, ytrain)
     evaluate_model(model, xvalid_tfidf, yvalid, target_names)
